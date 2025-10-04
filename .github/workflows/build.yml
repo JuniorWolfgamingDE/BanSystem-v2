@@ -3,7 +3,7 @@ name: Build artifact
 on:
   push:
     branches:
-      - master
+      - future
   pull_request:
 
 jobs:
