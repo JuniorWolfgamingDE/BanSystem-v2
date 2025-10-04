@@ -1,4 +1,10 @@
 # BanSystem
+> [!WARNING]
+> Diese Branch beinhaltet lediglich das originale BanSystem von Tobi.
+> Alle zukünftigen Änderungen werden **ausschließlich** in der [``future``-Branch](https://github.com/JuniorWolfgamingDE/BanSystem-v2/tree/future) veröffentlicht, und nicht weiter zum Original-Repository beigetragen.
+> Diese Entscheidung treffe ich aufgrund eines Forks auf Modrinth, welcher meinen Code mitverwendet, allerdings gegen die AGPL-3.0 verstößt. Ich möchte nicht, dass mein Code rechtswidrig verwendet wird.
+> Da Tobi sein Plugin nicht mehr selbst weiterentwickelt, nutze ich es als Basis für mein eigenes - selbstverständlich mit der richtigen Lizenz.
+
 Ein umfangreiches Bestrafungssystem für Minecraft Server. Umfasst viele Funktionen und ist einfach zu bedienen.
 
 ## Anforderungen
