@@ -1,4 +1,8 @@
-# BanSystem
+# FutureBans
+> [!NOTE]
+> Diese Codebase ist derzeit auf dem letzten Stand von Tobi's BanSystem, inkludiert also die Änderungen die ich zu seiner Original-Codebase beigetragen habe.
+> Noch habe ich keine weiteren Änderungen gemacht - diese folgen bald. 
+
 Ein umfangreiches Bestrafungssystem für Minecraft Server. Umfasst viele Funktionen und ist einfach zu bedienen.
 
 ## Anforderungen
