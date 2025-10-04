@@ -23,7 +23,7 @@ IPautoban:
 #         To get the apikey simply go to https://vpnapi.io/ and create an account.
 #         Now the apikey is on the dashboard.
 VPN:
-  enable: true
+  enable: false
   autoban:
     enable: false
     ID: 11
@@ -45,7 +45,7 @@ needReason:
 # If autoban is disabled, all players with the permission "bansys.notify" are receiving a warning message.
 blacklist:
   words:
-    enable: true
+    enable: false
     checkcommands:
       enable: true
       commands:
@@ -58,7 +58,7 @@ blacklist:
       enable: true
       id: 6
   ads:
-    enable: true
+    enable: false
     checkcommands:
       enable: true
       commands:
@@ -85,7 +85,7 @@ signdChatBypass:
   enable: false
 
 # If you don´t want to get a notification if an update is available you can disable this option.
-# You can manually check for updates at https://www.spigotmc.org/resources/bansystem-mit-ids-spigot-bungeecord.65863/
+# You can manually check for updates at https://github.com/JuniorWolfgamingDE/FutureBans/
 updateCheck: true
 
 # To add an ID simple use the command "/bansys ids create" or just copy an ID and change the attributes.
@@ -144,7 +144,7 @@ IDs:
         type: NETWORK
         duration: -1
   '6':
-    reason: Chat Verhalten
+    reason: Chatverhalten
     onlyAdmins: false
     lvl:
       '1':

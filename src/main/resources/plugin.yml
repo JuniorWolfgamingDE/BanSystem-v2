@@ -1,6 +1,6 @@
-name: BanSystem
+name: FutureBans
 version: 3.2
-author: Tobias Herzig
+author: [JuniorWMG, Tobias Herzig]
 main: net.coalcube.bansystem.spigot.BanSystemSpigot
 commands:
   ban:
