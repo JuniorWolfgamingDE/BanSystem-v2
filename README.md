@@ -1,7 +1,7 @@
 # FutureBans
 > [!NOTE]
-> Diese Codebase ist derzeit auf dem letzten Stand von Tobi's BanSystem, inkludiert also die Änderungen die ich zu seiner Original-Codebase beigetragen habe.
-> Noch habe ich keine weiteren Änderungen gemacht - diese folgen bald. 
+> Diese Codebase ist zum größten Teil noch auf dem letzten Stand von Tobi's BanSystem.
+> Ich habe allerdings angefangen, meine ersten größeren Änderungenen zu machen.
 
 Ein umfangreiches Moderationssystem für Minecraft Server. Umfasst viele Funktionen und ist einfach zu bedienen.
 
