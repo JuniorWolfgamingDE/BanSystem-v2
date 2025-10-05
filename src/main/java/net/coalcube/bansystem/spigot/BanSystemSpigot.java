@@ -58,7 +58,7 @@ public class BanSystemSpigot extends JavaPlugin implements BanSystem {
     private static List<String> cachedMutedPlayerNames;
     private MetricsAdapter metricsAdapter;
 
-    public static String prefix = "§8§l┃ §cBanSystem §8» §7";
+    public static String prefix = "§9FutureBans §8> §7";
     private boolean isUpdateAvailable;
 
     @Override
@@ -75,20 +75,20 @@ public class BanSystemSpigot extends JavaPlugin implements BanSystem {
         console = Bukkit.getConsoleSender();
         PluginManager pluginmanager = Bukkit.getPluginManager();
         configurationUtil = new ConfigurationUtil(config, messages, blacklist, this);
-        UpdateChecker updatechecker = new UpdateChecker(65863);
+        UpdateChecker updatechecker = new UpdateChecker("JuniorWolfgamingDE", "FutureBans");
         cachedBannedPlayerNames = new ArrayList<>();
         cachedMutedPlayerNames = new ArrayList<>();
 
         File smallSplash = new File(getDataFolder(), ".smallsplash");
         if (!smallSplash.exists()) {
-            console.sendMessage("§c  ____                    ____                  _                      ");
-            console.sendMessage("§c | __ )    __ _   _ __   / ___|   _   _   ___  | |_    ___   _ __ ___  ");
-            console.sendMessage("§c |  _ \\   / _` | | '_ \\  \\___ \\  | | | | / __| | __|  / _ \\ | '_ ` _ \\ ");
-            console.sendMessage("§c | |_) | | (_| | | | | |  ___) | | |_| | \\__ \\ | |_  |  __/ | | | | | |");
-            console.sendMessage("§c |____/   \\__,_| |_| |_| |____/   \\__, | |___/  \\__|  \\___| |_| |_| |_|");
-            console.sendMessage("§c                                  |___/                           §7v" + this.getVersion());
+            console.sendMessage("§9  _____      _                  ____");
+            console.sendMessage("§9 |  ____   _| |_ _   _ _ __ ___| __ )  __ _ _ __  ___");
+            console.sendMessage("§9 | |_ | | | | __| | | | '__/ _ |  _ \\ / _` | '_ \\/ __|");
+            console.sendMessage("§9 |  _|| |_| | |_| |_| | | |  __| |_) | (_| | | | \\__ \\");
+            console.sendMessage("§9 |_|   \\__,_|\\__|\\__,_|_|  \\___|____/ \\__,_|_| |_|___/");
+            console.sendMessage("                                                       §7v" + this.getVersion());
         } else {
-            console.sendMessage(prefix + "BanSystem v" + this.getVersion() + " wird gestartet...");
+            console.sendMessage(prefix + "FutureBans v" + this.getVersion() + " wird gestartet...");
         }
 
         try {
@@ -193,15 +193,14 @@ public class BanSystemSpigot extends JavaPlugin implements BanSystem {
             throw new RuntimeException(e);
         }
 
-        console.sendMessage(prefix + "§7Das BanSystem wurde gestartet.");
+        console.sendMessage(prefix + "§7FutureBans wurde aktiviert.");
 
         try {
             isUpdateAvailable = updatechecker.checkForUpdates();
             if (config.getBoolean("updateCheck")) {
                 if (isUpdateAvailable) {
                     console.sendMessage(prefix + "§cEin neues Update ist verfügbar.");
-                    console.sendMessage(prefix + "§7Lade es dir unter " +
-                            "§ehttps://www.spigotmc.org/resources/bansystem-mit-ids.65863/ §7runter um aktuell zu bleiben.");
+                    console.sendMessage(prefix + "§7Lade es dir unter §ehttps://github.com/JuniorWolfgamingDE/FutureBans/releases §7herunter, um aktuell zu bleiben.");
                 }
             }
         } catch (Exception e) {
@@ -241,7 +240,7 @@ public class BanSystemSpigot extends JavaPlugin implements BanSystem {
         PlayerJoinEvent.getHandlerList().unregister(instance);
         PlayerPreLoginEvent.getHandlerList().unregister(instance);
 
-        console.sendMessage(BanSystemSpigot.prefix + "§7Das BanSystem wurde gestoppt.");
+        console.sendMessage(BanSystemSpigot.prefix + "§7FutureBans wurde deaktiviert.");
 
     }
 

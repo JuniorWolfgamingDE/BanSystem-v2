@@ -43,9 +43,9 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-@Plugin(id = "bansystem", name = "BanSystem", version = "3.1",
-        url = "https://www.spigotmc.org/resources/bansystem-mit-ids-spigot-bungeecord.65863/",
-        description = "Punishment System", authors = {"Tobi"})
+@Plugin(id = "bansystem", name = "FutureBans", version = "3.2.0",
+        url = "https://github.com/JuniorWolfgamingDE/FutureBans",
+        description = "Moderation system.", authors = {"JuniorWMG", "Tobias Herzig"})
 public class BanSystemVelocity implements BanSystem {
 
     private final ProxyServer server;
@@ -72,7 +72,7 @@ public class BanSystemVelocity implements BanSystem {
     private static List<String> cachedMutedPlayerNames;
     private MetricsAdapter metricsAdapter;
 
-    public static String prefix = "§8§l┃ §cBanSystem §8» §7";
+    public static String prefix = "§9FutureBans §8> §7";
     private boolean isUpdateAvailable;
 
     @Inject
@@ -91,7 +91,7 @@ public class BanSystemVelocity implements BanSystem {
 
         metricsAdapter = new VelocityMetrics(metrics);
         PluginManager pluginmanager = server.getPluginManager();
-        UpdateChecker updatechecker = new UpdateChecker(65863);
+        UpdateChecker updatechecker = new UpdateChecker("JuniorWolfgamingDE", "FutureBans");
         lcs = LegacyComponentSerializer.legacySection();
         configurationUtil = new ConfigurationUtil(config, messages, blacklist, this);
         timeFormatUtil = new TimeFormatUtil(configurationUtil);
@@ -100,14 +100,14 @@ public class BanSystemVelocity implements BanSystem {
 
         File smallSplash = new File(dataDirectory.toFile(), ".smallsplash");
         if (!smallSplash.exists()) {
-            sendConsoleMessage("§c  ____                    ____                  _                      ");
-            sendConsoleMessage("§c | __ )    __ _   _ __   / ___|   _   _   ___  | |_    ___   _ __ ___  ");
-            sendConsoleMessage("§c |  _ \\   / _` | | '_ \\  \\___ \\  | | | | / __| | __|  / _ \\ | '_ ` _ \\ ");
-            sendConsoleMessage("§c | |_) | | (_| | | | | |  ___) | | |_| | \\__ \\ | |_  |  __/ | | | | | |");
-            sendConsoleMessage("§c |____/   \\__,_| |_| |_| |____/   \\__, | |___/  \\__|  \\___| |_| |_| |_|");
-            sendConsoleMessage("§c                                  |___/                           §7v" + this.getVersion());
+            sendConsoleMessage("§9  _____      _                  ____");
+            sendConsoleMessage("§9 |  ____   _| |_ _   _ _ __ ___| __ )  __ _ _ __  ___");
+            sendConsoleMessage("§9 | |_ | | | | __| | | | '__/ _ |  _ \\ / _` | '_ \\/ __|");
+            sendConsoleMessage("§9 |  _|| |_| | |_| |_| | | |  __| |_) | (_| | | | \\__ \\");
+            sendConsoleMessage("§9 |_|   \\__,_|\\__|\\__,_|_|  \\___|____/ \\__,_|_| |_|___/");
+            sendConsoleMessage("                                                       §7v" + this.getVersion());
         } else {
-            sendConsoleMessage(prefix + "BanSystem v" + this.getVersion() + " wird gestartet...");
+            sendConsoleMessage(prefix + "FutureBans v" + this.getVersion() + " wird gestartet...");
         }
 
         try {
@@ -214,15 +214,14 @@ public class BanSystemVelocity implements BanSystem {
             throw new RuntimeException(e);
         }
 
-        sendConsoleMessage(prefix + "§7Das BanSystem wurde gestartet.");
+        sendConsoleMessage(prefix + "§7FutureBans wurde aktiviert.");
 
         try {
             isUpdateAvailable = updatechecker.checkForUpdates();
             if (config.getBoolean("updateCheck")) {
                 if (isUpdateAvailable) {
                     sendConsoleMessage(prefix + "§cEin neues Update ist verfügbar.");
-                    sendConsoleMessage(prefix + "§7Lade es dir unter " +
-                            "§ehttps://www.spigotmc.org/resources/bansystem-mit-ids.65863/ §7runter um aktuell zu bleiben.");
+                    sendConsoleMessage(prefix + "§7Lade es dir unter §ehttps://github.com/JuniorWolfgamingDE/FutureBans/releases §7herunter, um aktuell zu bleiben.");
                 }
             }
         } catch (Exception e) {
@@ -242,7 +241,7 @@ public class BanSystemVelocity implements BanSystem {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        logger.info(BanSystemVelocity.prefix + "§7Das BanSystem wurde gestoppt.");
+        logger.info(BanSystemVelocity.prefix + "§7FutureBans wurde deaktiviert.");
 
     }
 
